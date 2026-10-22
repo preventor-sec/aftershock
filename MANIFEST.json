@@ -1,0 +1,211 @@
+{
+  "product": "Aftershock",
+  "version": "0.4.0",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 102,
+      "sha256": "620d52eb1b5b9c063c0359ae4a517e7dc2a25c0a1f6887bd71760e45a774dbba"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 88,
+      "sha256": "4d74a8390efd2325bd5252b2b0624adb078887b5e36e0b782c25d2114d0a2a63"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 805,
+      "sha256": "65f4357f785335d16fbcdc376ccceebca5ad5841481f636b85345a576976d6fd"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 261,
+      "sha256": "af4d8f5e32fd7a2a0b39f3e0a014fea0dfeb2de31b94b604da119b0e0311902c"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1080,
+      "sha256": "1eff1773fead39d949b15679c930ef9b198887017698089534bc0f8704704620"
+    },
+    {
+      "path": "ORBOFI-HANDOFF.md",
+      "bytes": 6531,
+      "sha256": "85e297bb89944a284d9481b48cfd6230296c23199915f04e7ba87b33db7b9d59"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3385,
+      "sha256": "1b79352320664b663b566e258008f08f99e53ebc94403903c9a77055a0b54d0e"
+    },
+    {
+      "path": "START-HERE.txt",
+      "bytes": 707,
+      "sha256": "471ebaa399096900cf04c42568b92b02a69811754e67bb844c4b0f36445d47bf"
+    },
+    {
+      "path": "app.js",
+      "bytes": 18423,
+      "sha256": "515017edffbcb484df3510ec26e98fb76056e0b351e7d3d3fd7b187fb2898487"
+    },
+    {
+      "path": "backend/checks.mjs",
+      "bytes": 11011,
+      "sha256": "e8b74adfc6b7f5185077e021d583490bb5b84307d2afeedb24befdea7c8520a9"
+    },
+    {
+      "path": "backend/safe-fetch.mjs",
+      "bytes": 4632,
+      "sha256": "26d7c01ce7c8c7357806b932690c64977613bd3dcabd1f7b7299c7c4c6977502"
+    },
+    {
+      "path": "backend/scan.mjs",
+      "bytes": 8076,
+      "sha256": "00961129472f82ded49b17466939fc54a1e3b02565e1d6a40af3f119b9ca39a8"
+    },
+    {
+      "path": "data.js",
+      "bytes": 3637,
+      "sha256": "56e37b0a0a2f2bbdfb0583c0790e9d33b8ad172b7ec85a3da20eda8a36c109ff"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 4726,
+      "sha256": "28727fecdfb13bcd02a5d2baa26410822e87f8464648e84bf4d4b1fdeb692191"
+    },
+    {
+      "path": "docs/BACKEND-HANDOFF.md",
+      "bytes": 604,
+      "sha256": "f657a76a959c386a971a94cc429af87fc159b6521cc469bdb4fa2ed29fb0a22d"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "bytes": 2855,
+      "sha256": "a6b21b1b37a5e79d5b33637a1107c1ea44780f564adf7a22d93f326d906144b2"
+    },
+    {
+      "path": "docs/EVIDENCE.md",
+      "bytes": 1509,
+      "sha256": "e50b107194f12294875300e188ec0a563d141f9b14aff39d5ebebe585062ce77"
+    },
+    {
+      "path": "docs/NARRATIVE.md",
+      "bytes": 1018,
+      "sha256": "4d78b72428b40bf023c4625a2269d5e45a517818ac70664aab4ce747e0a63100"
+    },
+    {
+      "path": "docs/PRODUCT.md",
+      "bytes": 1161,
+      "sha256": "9472e96d07c3b3df1e0393b66e309a86c4dc6ed7cba766ae34f56cad2043afca"
+    },
+    {
+      "path": "docs/QA.md",
+      "bytes": 3752,
+      "sha256": "2802a13ed4f06100efa05ef52aa3457ee6dcbc9fda19bbe4c98e6c29e7a93f76"
+    },
+    {
+      "path": "docs/RECENT-DISCLOSURES.md",
+      "bytes": 2730,
+      "sha256": "b918a2a405ca1816d3847c45e751cdde238651ca6f50a1ed50d7626826629624"
+    },
+    {
+      "path": "docs/SECURITY-REVIEW.md",
+      "bytes": 3576,
+      "sha256": "9bc0ee7c73c8935d41d3bd0d2643fba94fdd22e02aab2612b378fdc6784b94d9"
+    },
+    {
+      "path": "docs/STYLE.md",
+      "bytes": 1143,
+      "sha256": "7ca86b9a4075b902fea5091aa9e4a45d20f76217e1979f885f689e1102e4938a"
+    },
+    {
+      "path": "engine.js",
+      "bytes": 9358,
+      "sha256": "f664db56001df63867a246e8eada852b13a57e33ee57d0d6c7daeb862a4e86b3"
+    },
+    {
+      "path": "index.html",
+      "bytes": 8863,
+      "sha256": "35dc03957a433b309d6eacf5f8158e10d225c7f908f90ddc0fd154cad3f20f7d"
+    },
+    {
+      "path": "package.json",
+      "bytes": 532,
+      "sha256": "061ebb91b08814ae9867a980716c30c7ed743a8dc3ef8027f3ec47914b40993b"
+    },
+    {
+      "path": "previews/desktop-full.png",
+      "bytes": 576363,
+      "sha256": "46e4eef5cc5885c1116c62712099065ef0620ede8dfe4868e709e1763ef5892f"
+    },
+    {
+      "path": "previews/desktop.png",
+      "bytes": 92679,
+      "sha256": "97df400fd1b4698bc76a9149e8836fc1062405d425e57c20b7770c4ed1e7b5d7"
+    },
+    {
+      "path": "previews/fix-plan.png",
+      "bytes": 238404,
+      "sha256": "f3a4e39b322a35173160f37aa1a4cb581e7bb8959f506d5cce2c722177d3a915"
+    },
+    {
+      "path": "previews/live-findings.png",
+      "bytes": 218463,
+      "sha256": "e5a79fadf80748baa90ed24bce75e1f7d5248566c6b79f57aa53bf7a4fcbeda2"
+    },
+    {
+      "path": "previews/live-report.json",
+      "bytes": 7982,
+      "sha256": "668de0bff61d2bb96b5df43410bcc5a03e7229cfaf5d875c03caa9bbe1dc7e9f"
+    },
+    {
+      "path": "previews/mobile.png",
+      "bytes": 49823,
+      "sha256": "c18e455e4efeb4913051918cb9678f209e933d1a015678f8a60a66c5cf0d05f3"
+    },
+    {
+      "path": "server.mjs",
+      "bytes": 9292,
+      "sha256": "c653055647b12663419c350644bdcf84320cbd5a663359a4cb17093c856da22d"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 28017,
+      "sha256": "5aa86a7c4d0e4394b3032e69e480a5b796a676ecc37473a4e95b0a2750b430d9"
+    },
+    {
+      "path": "tests/adversarial.test.mjs",
+      "bytes": 3595,
+      "sha256": "ce627d3abd3287e181c7347fe8015f42970a86a2a268431f80533bd38ca6148f"
+    },
+    {
+      "path": "tests/engine.test.cjs",
+      "bytes": 4673,
+      "sha256": "9a85967a25088d82ea2fdf9044a22c520c00332419eccbf0896869fb33db4f37"
+    },
+    {
+      "path": "tests/scanner.test.mjs",
+      "bytes": 11205,
+      "sha256": "633acc1fedb2e85c599c058ff414bb847f857ee8155652a5d1da5040c5b88c1f"
+    },
+    {
+      "path": "tests/server.test.mjs",
+      "bytes": 8455,
+      "sha256": "0948f975907ebe594d47c06b90aa6d7b338190e5a0c73ff179a4e27d1760c03b"
+    },
+    {
+      "path": "tests/test_collector.py",
+      "bytes": 1851,
+      "sha256": "6360945bfd4eb060b6c507a5b98eb61e6c62d65f454f9b6e2ac95524e163d33c"
+    },
+    {
+      "path": "tests/ui.test.cjs",
+      "bytes": 7958,
+      "sha256": "69c7f33570996133f186fcf57b58d9caed56a112eb5ef62b0b59774e4a08f19d"
+    },
+    {
+      "path": "tools/collect_evidence.py",
+      "bytes": 4217,
+      "sha256": "abe06f82a9a8f65295ebc2896937bd376c5262c814514b6f379b4e513c7339d4"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "2.0",
+  "id": "5618c939-1df4-4942-bcab-62665a6c5499",
+  "target": "https://example.com/",
+  "finalUrl": "https://example.com/",
+  "startedAt": "2026-10-22T12:14:45.842Z",
+  "completedAt": "2026-10-22T12:14:45.885Z",
+  "durationMs": 43,
+  "status": "complete",
+  "summary": {
+    "observations": 10,
+    "actionItems": 5,
+    "passed": 4,
+    "unknown": 1
+  },
+  "findings": [
+    {
+      "id": "hsts",
+      "title": "HSTS is missing or disabled",
+      "category": "configuration",
+      "status": "action",
+      "priority": "medium",
+      "confidence": "observed",
+      "evidence": [
+        "No Strict-Transport-Security response header."
+      ],
+      "why": "HSTS tells returning browsers to enforce HTTPS. It does not prove origin runtime security.",
+      "fix": "Set Strict-Transport-Security with a suitable positive max-age after verifying HTTPS across your deployment.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
+    },
+    {
+      "id": "http-upgrade",
+      "title": "HTTP entry point remains unencrypted",
+      "category": "transport",
+      "status": "action",
+      "priority": "medium",
+      "confidence": "observed",
+      "evidence": [
+        "HTTP probe ended at http://example.com/ with status 200."
+      ],
+      "why": "First-time visitors may use HTTP before HSTS has been learned.",
+      "fix": "Redirect the HTTP entry point to HTTPS."
+    },
+    {
+      "id": "csp",
+      "title": "No enforcing CSP header observed",
+      "category": "configuration",
+      "status": "action",
+      "priority": "low",
+      "confidence": "observed",
+      "evidence": [
+        "No Content-Security-Policy header."
+      ],
+      "why": "A policy can reduce browser injection impact; its presence does not establish an effective XSS defense.",
+      "fix": "Review a restrictive policy against your application; deploy in report-only mode first when needed.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy"
+    },
+    {
+      "id": "framing",
+      "title": "No framing policy observed",
+      "category": "configuration",
+      "status": "action",
+      "priority": "low",
+      "confidence": "observed",
+      "evidence": [
+        "No valid X-Frame-Options header.",
+        "No CSP frame-ancestors directive observed."
+      ],
+      "why": "A framing policy can reduce clickjacking; presence does not establish restrictive or valid values. Wildcards may intentionally permit embedding.",
+      "fix": "Review an appropriate CSP frame-ancestors policy if this page should not be embedded.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors"
+    },
+    {
+      "id": "nosniff",
+      "title": "MIME sniffing protection not observed",
+      "category": "configuration",
+      "status": "action",
+      "priority": "low",
+      "confidence": "observed",
+      "evidence": [
+        "X-Content-Type-Options: (absent)"
+      ],
+      "why": "The nosniff header helps browsers honor declared MIME types. Missing it alone is not a demonstrated exploit.",
+      "fix": "Set X-Content-Type-Options: nosniff and serve accurate content types.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options"
+    },
+    {
+      "id": "transport",
+      "title": "HTTPS connection established",
+      "category": "transport",
+      "status": "pass",
+      "priority": "info",
+      "confidence": "observed",
+      "evidence": [
+        "Final response: 200 over HTTPS.",
+        "TLS protocol: TLSv1.3; certificate issuer: SSL Corporation; expires: Dec 25 22:56:35 2026 GMT."
+      ],
+      "why": "HTTPS protects traffic in transit. TLS trust and hostname checks are enforced by the HTTP client.",
+      "fix": "Serve the page over HTTPS with a valid certificate; redirect HTTP entry points to HTTPS."
+    },
+    {
+      "id": "mixed-content",
+      "title": "No HTTP resource references in sampled markup",
+      "category": "content",
+      "status": "pass",
+      "priority": "info",
+      "confidence": "observed",
+      "evidence": [
+        "No explicit HTTP references found in the supported static attributes."
+      ],
+      "why": "Static attribute references are not proof of a browser request. This bounded token inspection skips raw-text bodies; it does not execute JavaScript, expand templates, decode entity-obfuscated URLs, or inspect CSS.",
+      "fix": "Use HTTPS resource URLs; confirm behavior in browser developer tools."
+    },
+    {
+      "id": "insecure-forms",
+      "title": "No HTTP form actions in sampled markup",
+      "category": "content",
+      "status": "pass",
+      "priority": "info",
+      "confidence": "observed",
+      "evidence": [
+        "No explicit HTTP references found in the supported static attributes."
+      ],
+      "why": "A real HTTP form action can expose submitted data. This bounded token inspection skips raw-text bodies; it does not execute JavaScript, expand templates, decode entity-obfuscated URLs, or inspect CSS.",
+      "fix": "Change form actions to HTTPS and verify the submission endpoint."
+    },
+    {
+      "id": "certificate-expiry",
+      "title": "TLS certificate expiry observed",
+      "category": "transport",
+      "status": "pass",
+      "priority": "info",
+      "confidence": "observed",
+      "evidence": [
+        "Certificate expires Dec 25 22:56:35 2026 GMT (64 days remaining)."
+      ],
+      "why": "A certificate close to expiration can cause availability problems.",
+      "fix": "Verify automated certificate renewal and deployment."
+    },
+    {
+      "id": "runtime-coverage",
+      "title": "Backend vulnerability status remains unverified",
+      "category": "advisory",
+      "status": "unknown",
+      "priority": "info",
+      "confidence": "unknown",
+      "evidence": [
+        "No runtime inventory, authenticated scan, source code, or deployment evidence was collected."
+      ],
+      "why": "A public response cannot prove backend patch levels, absence of compromise, or the security of every route.",
+      "fix": "Collect running runtime/package versions and configuration; compare with relevant vendor advisories."
+    }
+  ],
+  "coverage": [
+    {
+      "id": "public-response",
+      "label": "Public response",
+      "status": "checked",
+      "detail": "Bounded GET requests, with public DNS validation and TLS trust enforcement."
+    },
+    {
+      "id": "browser-policy",
+      "label": "Response headers and static HTML",
+      "status": "checked",
+      "detail": "Checks apply only to the sampled response and supported HTML attributes."
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime CVEs and compromise",
+      "status": "not-checked",
+      "detail": "Requires deployment evidence; version banners are unverified hints."
+    },
+    {
+      "id": "authenticated",
+      "label": "Authenticated routes and application logic",
+      "status": "not-checked",
+      "detail": "No login, JavaScript execution, exploit tests, or hidden-path enumeration."
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://example.com/",
+      "status": 200,
+      "bytes": 577
+    },
+    {
+      "url": "http://example.com/",
+      "status": 200,
+      "bytes": 577
+    }
+  ],
+  "tls": {
+    "protocol": "TLSv1.3",
+    "issuer": "SSL Corporation",
+    "validTo": "Dec 25 22:56:35 2026 GMT"
+  },
+  "limitations": [
+    "A passive posture check is not a penetration test or an all-clear.",
+    "Only the submitted page and bounded redirects were requested; no subresources or hidden paths were fetched.",
+    "Bundled banner comparison rules are a dated October 2026 snapshot, not a live vulnerability feed.",
+    "No credentials, cookie values, request bodies, or query parameters are accepted or retained.",
+    "JavaScript-generated content, CSS, authenticated areas and backend inventory are outside coverage."
+  ]
+}

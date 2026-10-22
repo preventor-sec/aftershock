@@ -1,0 +1,10 @@
+*
+!package.json
+!server.mjs
+!index.html
+!styles.css
+!app.js
+!data.js
+!engine.js
+!backend/
+!backend/**

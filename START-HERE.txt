@@ -1,0 +1,17 @@
+AFTERSHOCK v0.4.0 — REAL URL SCANNER
+
+1. Install a current patched Node.js 24 LTS (or newer supported release).
+2. Open a terminal in this extracted folder.
+3. Run: npm start
+4. Open: http://127.0.0.1:4175
+5. Paste a public website URL you are authorized to assess.
+
+No npm install, JSON upload, model key or paid service is needed.
+Run tests: npm test
+
+For the Orbofi agent: read ORBOFI-HANDOFF.md first.
+The full source, UI, test suite, design context, security decisions and
+deployment notes are included. See docs/QA.md for verification and limitations.
+
+This is a passive public-response scanner. It does not certify all backend
+CVEs, authenticated routes, absence of compromise or overall security.

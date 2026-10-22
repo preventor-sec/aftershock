@@ -1,0 +1,23 @@
+const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const ctx=vm.createContext({window:{},URL,Date});for(const name of ['data.js','engine.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'..',name),'utf8'),ctx);
+const E=ctx.window.AftershockEngine,D=ctx.window.AftershockData,copy=x=>JSON.parse(JSON.stringify(x));let checks=0;
+function test(name,fn){fn();checks++;console.log('PASS '+name);}
+test('sample finds the stale worker and groups PHP fixes',()=>{const r=E.assess(D.exampleBefore);assert.equal(r.summary.needsAction,5);assert.equal(r.actions.length,4);assert.equal(r.actions[0].serviceIds.length,2);const c=E.compare(D.exampleBefore,D.exampleAfter);assert.equal(c.summary.updated,4);assert.equal(c.summary.stillAffected,1);assert.equal(c.residual[0].id,'worker');assert.equal(c.closure,'incomplete');assert.equal(c.after.actions.length,1);});
+for(const a of D.advisories)for(const floor of Object.values(a.floors)){test(a.runtime+' boundary '+floor,()=>{const b=copy(D.exampleBefore);b.components=b.components.slice(0,1);const c=b.components[0];c.runtime=a.runtime;c.version=floor;assert.equal(E.assess(b).services[0].status,'meets-floor');const p=floor.split('.').map(Number);p[2]--;c.version=p.join('.');assert.equal(E.assess(b).services[0].status,'affected-version');});}
+test('missing worker blocks closure',()=>{const a=copy(D.exampleAfter);a.components=a.components.filter(c=>c.id!=='worker');const c=E.compare(D.exampleBefore,a);assert.equal(c.summary.missing,1);assert.equal(c.closure,'incomplete');assert.equal(c.residual[0].id,'worker');});
+test('duplicate identities rejected',()=>{const b=copy(D.exampleBefore);b.components.push(b.components[0]);assert.throws(()=>E.parseEvidence(b),/Duplicate/);});
+test('component timestamps required',()=>{const b=copy(D.exampleBefore);delete b.components[0].collectedAt;assert.throws(()=>E.parseEvidence(b),/collection time/);});
+test('impossible calendar date rejected',()=>{const b=copy(D.exampleBefore);b.capturedAt='2026-02-30T08:00:00Z';assert.throws(()=>E.parseEvidence(b),/invalid calendar/);});
+test('collection cannot follow snapshot',()=>{const b=copy(D.exampleBefore);b.components[0].collectedAt='2026-10-22T08:00:01Z';assert.throws(()=>E.parseEvidence(b),/after the snapshot/);});
+test('after must be newer',()=>assert.throws(()=>E.compare(D.exampleBefore,D.exampleBefore),/newer/));
+test('component must be freshly collected',()=>{const a=copy(D.exampleAfter);a.components[0].collectedAt=D.exampleBefore.components[0].collectedAt;assert.throws(()=>E.compare(D.exampleBefore,a),/newer collection/);});
+test('different targets rejected',()=>{const a=copy(D.exampleAfter);a.target='https://different.example.com';assert.throws(()=>E.compare(D.exampleBefore,a),/same target/);});
+test('environment identity changes rejected',()=>{const a=copy(D.exampleAfter);a.components[0].environment='staging';assert.throws(()=>E.compare(D.exampleBefore,a),/runtime or environment/);});
+test('installed patched binaries do not close deployment',()=>{const a=copy(D.exampleAfter);a.components.forEach(c=>c.evidenceType='installed-binary');const c=E.compare(D.exampleBefore,a);assert.equal(c.summary.updated,0);assert.equal(c.residual.length,5);assert.equal(c.closure,'incomplete');});
+test('vendor backports require separate evidence',()=>{const b=copy(D.exampleBefore);b.components[0].config.vendorBackport=true;assert.equal(E.assess(b).services[0].status,'needs-context');});
+test('disabled Drupal module does not certify patch',()=>{const b=copy(D.exampleBefore);Object.assign(b.components[0],{runtime:'Drupal',version:'11.4.9',config:{fieldUiEnabled:false}});assert.equal(E.assess(b).services[0].status,'affected-version');assert.match(E.assess(b).services[0].detail,/reported mitigation/);});
+for(const version of ['08.3.36','8.3.36-rc1','8.3.36-vendor1','8.3.99999999999999999999'])test('noncanonical version stays unknown '+version,()=>{const b=copy(D.exampleBefore);b.components[0].version=version;assert.equal(E.assess(b).services[0].status,'needs-context');});
+test('unsupported runtime branch stays outside coverage',()=>{const b=copy(D.exampleBefore);b.components[0].version='9.0.0';assert.equal(E.assess(b).services[0].status,'outside-coverage');});
+for(const u of ['ftp://example.com','http://127.0.0.1','http://[::1]','https://a:b@example.com','http://local.internal'])test('reject target '+u,()=>assert.throws(()=>E.validateUrl(u)));
+test('query secrets are not retained in target',()=>assert.equal(E.validateUrl('https://example.com/path?token=secret#hash'),'https://example.com'));
+console.log(`\n${checks} engine checks passed.`);
