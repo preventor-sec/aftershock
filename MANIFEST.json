@@ -1,11 +1,16 @@
 {
   "product": "Aftershock",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "files": [
     {
       "path": ".dockerignore",
       "bytes": 102,
       "sha256": "620d52eb1b5b9c063c0359ae4a517e7dc2a25c0a1f6887bd71760e45a774dbba"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 774,
+      "sha256": "122b6a023355e82be21dd5cf09acc30533f284e06bdcaa854c21c7f48f35599e"
     },
     {
       "path": ".gitignore",
@@ -14,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 805,
-      "sha256": "65f4357f785335d16fbcdc376ccceebca5ad5841481f636b85345a576976d6fd"
+      "bytes": 1005,
+      "sha256": "e374a989632b5652da81628687b978416a942005a7d0670199942f76242aafac"
     },
     {
       "path": "Dockerfile",
@@ -36,6 +41,11 @@
       "path": "README.md",
       "bytes": 3385,
       "sha256": "1b79352320664b663b566e258008f08f99e53ebc94403903c9a77055a0b54d0e"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1759,
+      "sha256": "4c3807b924efbd3f521bbb68037c95fd3eb774e28da6885b0cf5e841bfcb9894"
     },
     {
       "path": "START-HERE.txt",
@@ -129,8 +139,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 532,
-      "sha256": "061ebb91b08814ae9867a980716c30c7ed743a8dc3ef8027f3ec47914b40993b"
+      "bytes": 533,
+      "sha256": "c19119e01cfba225661f7b0a3e94716cb264aec17b52771ef9a54ac9ec49a118"
     },
     {
       "path": "previews/desktop-full.png",

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1
+
+- Added `SECURITY.md` (private advisory reporting, scope, handling policy).
+- Added a GitHub bug report issue template.
+- `MANIFEST.json` now covers 43 files with SHA-256 integrity hashes.
+
 ## 0.4.0 — 22 October 2026
 
 ### Header redesigned (same text, new position)
