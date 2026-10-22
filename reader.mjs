@@ -44,7 +44,7 @@ export function createReaderApp({scanner=scanWebsite,now=Date.now,code=''}={}){
    res.setHeader('Access-Control-Allow-Methods','GET,POST,DELETE,OPTIONS');
    res.setHeader('Access-Control-Allow-Headers','content-type,x-scan-token,x-reader-code');
    res.setHeader('Access-Control-Max-Age','600');
-   if(req.method==='OPTIONS'&&req.url?.startsWith('/api/')){res.writeHead(204);return res.end();}
+   if(req.method==='OPTIONS'&&req.url?.startsWith('/api/')){if(req.headers['access-control-request-private-network']==='true')res.setHeader('Access-Control-Allow-Private-Network','true');res.writeHead(204);return res.end();}
    const url=new URL(req.url,'http://reader.local');
    const pinnedHost=`127.0.0.1:${server.address()?.port}`;
    if(req.headers.host!==pinnedHost)return send(res,403,errorBody('HOST_DENIED','The reader accepts loopback requests for its own host only.'));

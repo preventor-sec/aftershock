@@ -39,8 +39,8 @@
   },
   {
    "path": "README.md",
-   "bytes": 3977,
-   "sha256": "5dcafed2b8b2313a340f78ae79ab3f623c1d2fb1722f648dad0edc051c2f4816"
+   "bytes": 4224,
+   "sha256": "fe9dbc09a3687d82d7eec31020f01127978048687baeffd8c3db91e3750bb92c"
   },
   {
    "path": "SECURITY.md",
@@ -49,23 +49,23 @@
   },
   {
    "path": "START-HERE.txt",
-   "bytes": 843,
-   "sha256": "8fa3b672a6c79cde5a8e07c0148b7cc9a9c54d166aadd04e347557fb77c7ccde"
+   "bytes": 901,
+   "sha256": "c0947d44d7d5c0a6431f578ba1fe4e803dafd3ab39b91d8de8e3eca79d3ea6d4"
   },
   {
    "path": "aftershock-reader.mjs",
-   "bytes": 32670,
-   "sha256": "0adcb9683cd50d4e68526efbfb3d7fb898db20c12913fa929a33fdccdb54a0b0"
+   "bytes": 32797,
+   "sha256": "a90aff42f89e4389b229121ba73fe76a0fce91a95f096ef2770f6245f8ec3efb"
   },
   {
    "path": "aftershock.html",
-   "bytes": 106855,
-   "sha256": "b6850138e47de6411b815627fd3171e1159567cf95d3e04eeaa2a4be0851ed8d"
+   "bytes": 107168,
+   "sha256": "25dd453f47c4756695e3c423bdd9525d3cbb4d1acd69ec7c2294a020226c6627"
   },
   {
    "path": "app.js",
-   "bytes": 21706,
-   "sha256": "b4880b2b91a6fc6000353f7d7229fd8e0e128059614512c6198c92a90e9274c0"
+   "bytes": 21847,
+   "sha256": "3be55e2a1b3c2aad117b9dd8f2e1a521ea7856b4d975d902a584e3e1054d1a2c"
   },
   {
    "path": "backend/checks.mjs",
@@ -184,8 +184,8 @@
   },
   {
    "path": "reader.mjs",
-   "bytes": 9079,
-   "sha256": "53d563ce7dd52fa66cbb9f8a6fbe4462f40e2c577b4155097c324dd5927d3613"
+   "bytes": 9206,
+   "sha256": "9069443419b6e808892005d1dcedbbcf6d539560246197aaf0044be35c312ec8"
   },
   {
    "path": "server.mjs",

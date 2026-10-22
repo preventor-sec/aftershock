@@ -18,7 +18,9 @@ const READER={base:null,code:null,checked:false,
  save(){try{sessionStorage.setItem('aftershock.reader',JSON.stringify({base:this.base,code:this.code}));}catch(e){}},
  load(){try{const saved=JSON.parse(sessionStorage.getItem('aftershock.reader')||'null');if(saved&&saved.base&&saved.code){this.base=saved.base;this.code=saved.code;this.checked=true;}}catch(e){}}};
 READER.load();
-async function api(path,options={}){let response;try{response=await fetch(path,options);}catch(e){if(e.name==='AbortError')throw e;
+async function api(path,options={}){let response;try{response=await fetch(path,options);}catch(e){if(e.name==='AbortError')throw e;response=null;}
+ if(response){const type=(response.headers.get('content-type')||'');if(!type.includes('json'))response=null;}
+ if(!response){
  const reader=await READER.discover();
  if(!reader)throw new Error('No scanner reachable. Choose one: run npm start in the repository, or start the Aftershock reader (node reader.mjs) and enter its pairing code. The example report works without it.');
  try{response=await fetch(reader+path,options);}catch(e2){if(e2.name==='AbortError')throw e2;throw new Error('The reader stopped responding. Check the reader window, then retry.');}
