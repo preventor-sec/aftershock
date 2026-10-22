@@ -2,6 +2,12 @@
 
 A real URL-to-report security tool with a minimal black UI. Paste a public URL, inspect observed issues, copy a focused fix prompt, and recheck after deployment.
 
+## Try it now
+
+**Live:** <https://preventor-sec.github.io/aftershock/> — the app in your
+browser right now; example report and advisory snapshot work instantly. Or
+grab [`aftershock.html`](aftershock.html) (one file, works from `file://` too).
+
 ## Single-file mode (no install, live scans)
 
 `aftershock.html` is the whole app in one file: open it anywhere for the

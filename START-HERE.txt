@@ -2,6 +2,7 @@ AFTERSHOCK — START HERE
 Zero-dependency public-surface checker. Passive, bounded, honest.
 
 1) NO INSTALL, JUST LOOK
+   Live page: https://preventor-sec.github.io/aftershock/
    Open aftershock.html in any browser. The example report, advisory
    snapshot and evidence analyzer work from the file alone.
 
