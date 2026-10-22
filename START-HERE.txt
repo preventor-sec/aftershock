@@ -1,17 +1,20 @@
-AFTERSHOCK v0.4.0 — REAL URL SCANNER
+AFTERSHOCK — START HERE
+Zero-dependency public-surface checker. Passive, bounded, honest.
 
-1. Install a current patched Node.js 24 LTS (or newer supported release).
-2. Open a terminal in this extracted folder.
-3. Run: npm start
-4. Open: http://127.0.0.1:4175
-5. Paste a public website URL you are authorized to assess.
+1) NO INSTALL, JUST LOOK
+   Open aftershock.html in any browser. The example report, advisory
+   snapshot and evidence analyzer work from the file alone.
 
-No npm install, JSON upload, model key or paid service is needed.
-Run tests: npm test
+2) LIVE SCANS FROM THE SINGLE FILE
+   Click "Get the local reader" in the page, save aftershock-reader.mjs,
+   then run:  node aftershock-reader.mjs
+   It prints a one-time pairing code; paste it into the page when asked.
+   The reader listens on 127.0.0.1 only — websites cannot borrow it.
+   The SHA-256 of the reader appears in the page; verify it before trusting.
 
-For the Orbofi agent: read ORBOFI-HANDOFF.md first.
-The full source, UI, test suite, design context, security decisions and
-deployment notes are included. See docs/QA.md for verification and limitations.
+3) FULL REPOSITORY MODE
+   npm start   → http://127.0.0.1:4175  (same scanner, no pairing needed)
+   npm test    → 43 tests
 
-This is a passive public-response scanner. It does not certify all backend
-CVEs, authenticated routes, absence of compromise or overall security.
+Only scan websites you own or have permission to assess.
+Evidence first. Uncertainty included.
