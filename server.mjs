@@ -45,7 +45,7 @@ export function createApp({scanner=scanWebsite,publicOrigin='',now=Date.now,maxC
    if(req.headers['sec-fetch-site']==='cross-site'&&req.url?.startsWith('/api/'))return send(res,403,errorBody('ORIGIN_DENIED','Cross-site API requests are not accepted.'));
    const url=new URL(req.url,'http://local');
    if(url.search)return send(res,400,errorBody('QUERY_DENIED','API and asset URLs do not accept query parameters.'));
-   if(url.pathname==='/api/health'&&req.method==='GET')return send(res,200,{ok:true,version:'0.3.0',mode:'passive-public-url'});
+   if(url.pathname==='/api/health'&&req.method==='GET')return send(res,200,{ok:true,version:'0.4.2',mode:'passive-public-url'});
    if(url.pathname==='/api/scans'&&req.method==='POST'){
     prune();const body=await readJson(req);
     if(!body||typeof body!=='object'||Array.isArray(body)||typeof body.url!=='string'||body.url.length>2048||Object.keys(body).some(key=>key!=='url'))return send(res,400,errorBody('INVALID_INPUT','Provide one public website URL.'));

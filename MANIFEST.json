@@ -1,16 +1,11 @@
 {
   "product": "Aftershock",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "files": [
     {
       "path": ".dockerignore",
       "bytes": 102,
       "sha256": "620d52eb1b5b9c063c0359ae4a517e7dc2a25c0a1f6887bd71760e45a774dbba"
-    },
-    {
-      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
-      "bytes": 774,
-      "sha256": "122b6a023355e82be21dd5cf09acc30533f284e06bdcaa854c21c7f48f35599e"
     },
     {
       "path": ".gitignore",
@@ -19,8 +14,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1005,
-      "sha256": "e374a989632b5652da81628687b978416a942005a7d0670199942f76242aafac"
+      "bytes": 2218,
+      "sha256": "db9abc94a0d069e03a634834442eca2e84cb3b93d41b4396b259e7745f597318"
     },
     {
       "path": "Dockerfile",
@@ -39,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3385,
-      "sha256": "1b79352320664b663b566e258008f08f99e53ebc94403903c9a77055a0b54d0e"
+      "bytes": 3977,
+      "sha256": "5dcafed2b8b2313a340f78ae79ab3f623c1d2fb1722f648dad0edc051c2f4816"
     },
     {
       "path": "SECURITY.md",
@@ -49,13 +44,18 @@
     },
     {
       "path": "START-HERE.txt",
-      "bytes": 707,
-      "sha256": "471ebaa399096900cf04c42568b92b02a69811754e67bb844c4b0f36445d47bf"
+      "bytes": 843,
+      "sha256": "8fa3b672a6c79cde5a8e07c0148b7cc9a9c54d166aadd04e347557fb77c7ccde"
+    },
+    {
+      "path": "aftershock-reader.mjs",
+      "bytes": 32670,
+      "sha256": "0adcb9683cd50d4e68526efbfb3d7fb898db20c12913fa929a33fdccdb54a0b0"
     },
     {
       "path": "app.js",
-      "bytes": 18423,
-      "sha256": "515017edffbcb484df3510ec26e98fb76056e0b351e7d3d3fd7b187fb2898487"
+      "bytes": 21706,
+      "sha256": "b4880b2b91a6fc6000353f7d7229fd8e0e128059614512c6198c92a90e9274c0"
     },
     {
       "path": "backend/checks.mjs",
@@ -134,13 +134,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 8863,
-      "sha256": "35dc03957a433b309d6eacf5f8158e10d225c7f908f90ddc0fd154cad3f20f7d"
+      "bytes": 8980,
+      "sha256": "4b90e672cf2ddc3914d2c34b07ef2ed0bb19ae2a7b696704e5ba839e5e46f1c4"
     },
     {
       "path": "package.json",
       "bytes": 533,
-      "sha256": "c19119e01cfba225661f7b0a3e94716cb264aec17b52771ef9a54ac9ec49a118"
+      "sha256": "736b5c9a0f72a6b12c6bb94ec15ca2b1fe6d6d485b86fa86acf0a74616fe9e72"
     },
     {
       "path": "previews/desktop-full.png",
@@ -173,9 +173,14 @@
       "sha256": "c18e455e4efeb4913051918cb9678f209e933d1a015678f8a60a66c5cf0d05f3"
     },
     {
+      "path": "reader.mjs",
+      "bytes": 9079,
+      "sha256": "53d563ce7dd52fa66cbb9f8a6fbe4462f40e2c577b4155097c324dd5927d3613"
+    },
+    {
       "path": "server.mjs",
       "bytes": 9292,
-      "sha256": "c653055647b12663419c350644bdcf84320cbd5a663359a4cb17093c856da22d"
+      "sha256": "d142889b2f6a82230ff240d4af1390435dbe5e9b0b8b8ceeb645d309f96ef6bc"
     },
     {
       "path": "styles.css",
@@ -213,9 +218,24 @@
       "sha256": "69c7f33570996133f186fcf57b58d9caed56a112eb5ef62b0b59774e4a08f19d"
     },
     {
+      "path": "tools/build-artifact.mjs",
+      "bytes": 2215,
+      "sha256": "27280ed9a77ad30cac5a4d231a4df8af72cdc59b7bd6725b8106312a43e1f3db"
+    },
+    {
+      "path": "tools/build-reader.mjs",
+      "bytes": 2993,
+      "sha256": "f1e12905c371e04ed26c5049638f1186aabf958e6644cd85d30c88a1dd8c6fc3"
+    },
+    {
       "path": "tools/collect_evidence.py",
       "bytes": 4217,
       "sha256": "abe06f82a9a8f65295ebc2896937bd376c5262c814514b6f379b4e513c7339d4"
+    },
+    {
+      "path": "tools/patch-app.mjs",
+      "bytes": 7596,
+      "sha256": "8f65e2a548ce71c27feecc368f1548dbcbf1a018ad05964c920c9a03124d6a1d"
     }
   ]
 }

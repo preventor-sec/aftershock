@@ -2,6 +2,19 @@
 
 A real URL-to-report security tool with a minimal black UI. Paste a public URL, inspect observed issues, copy a focused fix prompt, and recheck after deployment.
 
+## Single-file mode (no install, live scans)
+
+`aftershock.html` is the whole app in one file: open it anywhere for the
+example report, the advisory snapshot, and the evidence analyzer. For live
+scans, click **Get the local reader** inside the page, run:
+
+    node aftershock-reader.mjs
+
+and enter the pairing code it prints. The reader binds to 127.0.0.1 only and
+runs the same bounded passive scanner as the repository server; nothing is
+installed, logged, or sent anywhere. The SHA-256 of the reader is shown in the
+page when you download it, so you can verify what you are about to trust.
+
 ## Run
 
 Use a current patched Node.js 24 LTS or newer supported release.

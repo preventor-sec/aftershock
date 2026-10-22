@@ -1,6 +1,6 @@
 {
   "name": "aftershock",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "type": "module",
   "description": "Public URL observations, fixes, and evidence-aware rescans",
